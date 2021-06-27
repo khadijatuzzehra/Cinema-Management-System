@@ -1,3 +1,5 @@
+package ControllerFiles;
+
 import com.mongodb.*;
 
 import java.util.ArrayList;
@@ -17,20 +19,20 @@ public class test extends Application {
     private TextArea textArea;
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("titleSearch.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SearchWindow.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Faculty Management System");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-    public void initialize(){
+    public void initialize() {
         try
         {
             //2) we are using localhost; by default password is 27017//
             MongoClient mongoClient=new MongoClient (new MongoClientURI("mongodb://localhost:27017"));
 
-            //3) similar to "use test" DB in shell//
-            DB myDB= mongoClient.getDB("test");
+            //3) similar to "use ControllerFiles.test" DB in shell//
+            DB myDB= mongoClient.getDB("ControllerFiles.test");
 
             //4) Using mytest_collection//
 
@@ -61,9 +63,9 @@ public class test extends Application {
         launch(args);
         Logger mongoLogger = Logger.getLogger( "org.mongodb.driver" );
         mongoLogger.setLevel(Level.SEVERE);
-        MongoClient mongo = new MongoClient( "localhost" , 27017 );
+        MongoClient ControllerFiles.mongo = new MongoClient( "localhost" , 27017 );
         //Connecting to the database
-        MongoDatabase database = mongo.getDatabase("test");
+        MongoDatabase database = ControllerFiles.mongo.getDatabase("ControllerFiles.test");
         MongoCollection<Document>collection = database.getCollection("mytest_collection");
         FindIterable<Document> iterDoc =
                 collection.find().projection(Projections.fields(Projections.include("first_name"),Projections.excludeId()));

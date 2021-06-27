@@ -7,21 +7,21 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mongo">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerFiles.mongo">
    <children>
       <ImageView fitHeight="482.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@bg.jpg" />
+            <Image url="@../bg.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="253.0" layoutY="25.0" text="Label" />
+      <Label layoutX="253.0" layoutY="25.0" text="Search By" />
       <TextField fx:id="movietxt" layoutX="74.0" layoutY="157.0" promptText="Movie Name" />
       <TextField fx:id="directortxt" layoutX="74.0" layoutY="282.0" promptText="Director Name" />
       <TextField fx:id="actortxt" layoutX="395.0" layoutY="157.0" promptText="Actor Name" />
       <TextField fx:id="genretxt" layoutX="388.0" layoutY="282.0" promptText="Genre" />
       <Button layoutX="129.0" layoutY="194.0" mnemonicParsing="false" onAction="#searchByTitle" text="Title" />
-      <Button layoutX="447.0" layoutY="194.0" mnemonicParsing="false" text="Actor" />
-      <Button layoutX="119.0" layoutY="319.0" mnemonicParsing="false" text="Director" />
-      <Button layoutX="446.0" layoutY="319.0" mnemonicParsing="false" text="Genre" />
+      <Button layoutX="447.0" layoutY="194.0" mnemonicParsing="false" onAction="#searchByActor" text="Actor" />
+      <Button layoutX="119.0" layoutY="319.0" mnemonicParsing="false" onAction="#searchByDirector" text="Director" />
+      <Button layoutX="446.0" layoutY="319.0" mnemonicParsing="false" onAction="#searchByGenre" text="Genre" />
    </children>
 </AnchorPane>
